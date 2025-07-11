@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoPulse - The Future on Your Wrist</title>
+    <style>
+        :root {
+            --primary-color: #ff3300e1;
+            --secondary-color: #ff6004;
+            --accent-color: #ff0000;
+            --dark-color: #2d2d3a;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --light-gray: #f1f1f1;
+            --white: #ffffff;
+            --black: #000000;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        /* Header and navigation styles remain the same */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-pulse {
+            width: 40px;
+            height: 40px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .cta-link {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        .cta-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero section styles remain the same */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10rem 2rem 5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 3rem;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray-color);
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .watch-float {
+            max-width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(108, 99, 255, 0.05));
+            z-index: 1;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.5;
+        }
+
+        .circle-3 {
+            width: 500px;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+        }
+
+        /* Updated Features Section with PNG Icons */
+        .features {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(108, 99, 255, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 174, 99, 0.1), rgba(255, 169, 99, 0.2));
+            border-radius: 50%;
+        }
+
+        .feature-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray-color);
+        }
+
+        /* Rest of your existing styles (demo, pricing, cta, footer) */
+        .demo {
+            padding: 6rem 2rem;
+            background-color: var(--light-gray);
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .pricing {
+            padding: 6rem 2rem;
+            background-color: var(--white);
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(108, 99, 255, 0.15);
+        }
+
+        .card-image {
+            margin-bottom: 1.5rem;
+        }
+
+        .card-image img {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .card ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-color);
+        }
+
+        .card ul li i {
+            color: var(--primary-color);
+        }
+
+        .featured {
+            border: 2px solid var(--primary-color);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .form-group {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #email {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #submit {
+            border-radius: 0 50px 50px 0;
+            padding: 15px 30px;
+            border: none;
+            background-color: var(--accent-color);
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: space-between;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .link-group {
+            min-width: 150px;
+        }
+
+        .link-group h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .link-group a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero-content {
+                align-items: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                margin-top: 3rem;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
+
+            #email, #submit {
+                border-radius: 50px;
+            }
+
+            #email {
+                margin-bottom: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                min-width: 100%;
+            }
+        }
+        .selectbtn{
+            background-color: var(--secondary-color);
+            width: 50%;
+            height: 8%;
+            color: #f8f9fa;
+            /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+            font-size: 15px;
+            border: 0px;
+            border-radius: 50px;
+        }
+        .btn{
+            background-color: var(--secondary-color);
+            padding: 10px;
+            color: #f8f9fa;
+            /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+            font-size: 15px;
+            border: 0px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+        .btn-primary{
+            color: white solid;
+            font-size: 110%;
+            text-decoration: none;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .btn-secondary{
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px black;
+            font-size: 110%;
+            text-decoration: none;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav id="nav-bar">
+            <div class="logo-container">
+                <img src="logo.png" alt="ChronoPulse Logo" id="header-img" class="logo-pulse">
+                <span class="logo-text">ChronoPulse</span>
+            </div>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#how-it-works">Demo</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li><a class="nav-link cta-link" href="#cta">Pre-order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Future on <span class="highlight" style="color: var(--primary-color);">Your Wrist</span></h1>
+            <p class="subtitle">ChronoPulse combines cutting-edge technology with elegant design for the ultimate smartwatch experience. Stay connected, track your health, and express your style.</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary">Explore Models</a>
+                <a href="#how-it-works" class="btn btn-secondary">Watch Demo</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">8,500+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">168</div>
+                    <div class="stat-label">Hours Battery</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Features</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="image1.png" alt="ChronoPulse Smartwatch" class="watch-float">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>Premium <span class="highlight">Features</span></h2>
+            <p class="section-subtitle">Designed to enhance every aspect of your life</p>
+        </div>
+        <div class="features-grid">
+            <!-- Health Monitoring Card -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="./ico/heart.png" alt="Health Monitoring Icon">
+                </div>
+                <h3>Health Monitoring</h3>
+                <p>Track heart rate, blood oxygen, sleep patterns, and stress levels with medical-grade precision.</p>
+            </div>
+            
+            <!-- Battery Life Card -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="./ico/duration.png" alt="Battery Life Icon">
+                </div>
+                <h3>7-Day Battery</h3>
+                <p>Enjoy a full week of use on a single charge with our revolutionary power-efficient technology.</p>
+            </div>
+            
+            <!-- Waterproof Card -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="./ico/rain.png" alt="Waterproof Icon">
+                </div>
+                <h3>Waterproof Design</h3>
+                <p>Swim, shower, or dive up to 50 meters with our fully waterproof and durable construction.</p>
+            </div>
+            
+            <!-- GPS Card -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="./ico/route.png" alt="GPS Icon">
+                </div>
+                <h3>Precision GPS</h3>
+                <p>Built-in GPS with offline maps for your hiking, running, and outdoor adventures.</p>
+            </div>
+            
+            <!-- Notifications Card -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="./ico/info.png" alt="Notifications Icon">
+                </div>
+                <h3>Smart Notifications</h3>
+                <p>Get calls, messages, and app alerts directly on your wrist with quick replies.</p>
+            </div>
+            
+            <!-- Customization Card -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="./ico/equalizer.png" alt="Customization Icon">
+                </div>
+                <h3>Customizable</h3>
+                <p>Hundreds of watch faces and interchangeable bands to match your personal style.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="demo">
+        <div class="section-header">
+            <h2>See It <span class="highlight">In Action</span></h2>
+            <p class="section-subtitle">Watch how ChronoPulse can transform your daily routine</p>
+        </div>
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2cSiv1sFFIc?si=Sl_XI03QLM8XfXCm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <h2>Choose Your <span class="highlight">ChronoPulse</span></h2>
+            <p class="section-subtitle">Find the perfect model for your lifestyle</p>
+        </div>
+        <div class="pricing-cards">
+            <div class="card">
+                <div class="card-image">
+                    <img src="image2.png" alt="Standard Model">
+                </div>
+                <h3>Standard</h3>
+                <p class="price">$199</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Basic health tracking</li>
+                    <li><i class="fas fa-check"></i> 3-day battery life</li>
+                    <li><i class="fas fa-check"></i> 5ATM water resistance</li>
+                    <li><i class="fas fa-check"></i> Standard band</li>
+                </ul>
+                <button class="selectbtn btn-outline">Select</button>
+            </div>
+            <div class="card featured">
+                <div class="popular-badge">Most Popular</div>
+                <div class="card-image">
+                    <img src="image3.png" alt="Pro Model">
+                </div>
+                <h3>Pro</h3>
+                <p class="price">$299</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Advanced health tracking</li>
+                    <li><i class="fas fa-check"></i> 7-day battery life</li>
+                    <li><i class="fas fa-check"></i> 10ATM water resistance</li>
+                    <li><i class="fas fa-check"></i> Premium band</li>
+                    <li><i class="fas fa-check"></i> ECG functionality</li>
+                </ul>
+                <button class="selectbtn btn-primary">Select</button>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="image1.png" alt="Luxury Model">
+                </div>
+                <h3>Ultra</h3>
+                <p class="price">$499</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> All Pro features</li>
+                    <li><i class="fas fa-check"></i> Titanium case</li>
+                    <li><i class="fas fa-check"></i> Handcrafted band</li>
+                    <li><i class="fas fa-check"></i> Exclusive watch faces</li>
+                    <li><i class="fas fa-check"></i> Priority support</li>
+                </ul>
+                <button class="selectbtn btn-outline">Select</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta">
+        <div class="cta-content">
+            <h2>Ready to Experience <span class="highlight">ChronoPulse?</span></h2>
+            <p>Join thousands of satisfied customers and revolutionize your daily life.</p>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit" id="submit" class="btn btn-primary">Pre-order Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo-light.png" alt="ChronoPulse Logo">
+                <span>ChronoPulse</span>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="link-group">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 ChronoPulse. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
