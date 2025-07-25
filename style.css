@@ -10,6 +10,48 @@
             --black: #000000;
             --transition: all 0.3s ease;
         }
+        .darkmode{
+            
+            --primary-color: #ff4800e1;
+            --secondary-color: #ff5e00;
+            --accent-color: #dc0505;
+            --dark-color: #ffffff;
+            --light-color: #000000;
+            --gray-color: #9c9c9c;
+            --light-gray: #000000;
+            --white: #000000;
+            --black: #ffffff;
+            --transition: all 0.3s ease;
+        }
+        .cta-button
+        {
+            background-color: var(--accent-color);
+        }
+        #theme-switch{
+            height:50px;
+            width: 50px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: var(--base=variant);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position:fixed;
+            top: 20%;
+            right: 20px;
+        }
+        #theme-switch svg{
+            fill:var(--primary-color);
+        }
+        #theme-switch svg:last-child{
+            display: none;
+        }
+        .darkmode #theme-switch svg:first-child{
+            display: none;
+        }
+        .darkmode #theme-switch svg:last-child{
+            display: block;
+        }
 
         * {
             margin: 0;
@@ -197,7 +239,8 @@
         .circle {
             position: absolute;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(108, 99, 255, 0.05));
+            /*background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(108, 99, 255, 0.05));*/
+            background: linear-gradient(135deg, rgba(255, 154, 72, 0.315), rgba(255, 155, 74, 0.281));
             z-index: 1;
         }
 
@@ -464,10 +507,11 @@
         }
 
         footer {
-            background-color: var(--dark-color);
-            color: var(--white);
+            background-color: #2d2d3a;
+            color: white;
             padding: 4rem 2rem 2rem;
         }
+        
 
         .footer-content {
             max-width: 1400px;
@@ -508,7 +552,7 @@
         .link-group h4 {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            color: var(--white);
+            color: white;
         }
 
         .link-group a {
@@ -571,6 +615,7 @@
             .card {
                 width: 100%;
                 max-width: 400px;
+                
             }
         }
 
@@ -680,4 +725,7 @@
         }
         .highlight2{
             color: var(--dark-color);
+        }
+        #bottom-text{
+            color: white;
         }
