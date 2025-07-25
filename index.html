@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +13,20 @@
         <button id="theme-switch">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
-        </button id=theme-swich>
+        </button>
         <nav id="nav-bar">
             <div class="logo-container">
-                <img src="logo.png" alt="ChronoPulse Logo" id="header-img" class="logo-pulse">
+                <a href="index.htm">
+                    <img src="logo.png" alt="ChronoPulse Logo" id="header-img" class="logo-pulse">
+                </a>
                 <span class="logo-text">ChronoPulse</span>
             </div>
             <ul class="nav-links">
+                <li><a class="nav-link"  href="index.htm">Home</a></li>
                 <li><a class="nav-link" href="#features">Features</a></li>
                 <li><a class="nav-link" href="#how-it-works">Demo</a></li>
-                <li><a class="nav-link" href="#pricing">Pricing</a></li>
-                <li><a class="nav-link cta-link" href="#cta">Pre-order</a></li>
+                <li><a class="nav-link" href="pricing.html">Pricing</a></li>
+                <li><a class="nav-link cta-link" href="cta.html">Pre-order</a></li>
             </ul>
         </nav>
     </header>
@@ -34,7 +36,7 @@
             <h1>The Future on <span class="highlight" style="color: var(--primary-color);">Your Wrist</span></h1>
             <p class="subtitle">ChronoPulse combines cutting-edge technology with elegant design for the ultimate smartwatch experience. Stay connected, track your health, and express your style.</p>
             <div class="hero-buttons">
-                <a href="#pricing" class="btn btn-primary">Explore Models</a>
+                <a href="pricing.html" class="btn btn-primary">Explore Models</a>
                 <a href="#how-it-works" class="btn btn-secondary">Watch Demo</a>
             </div>
             <div class="hero-stats">
@@ -120,7 +122,7 @@
                 <p>Hundreds of watch faces and interchangeable bands to match your personal style.</p>
             </div>
         </div>
-    </section>
+    </section>//
 
     <section id="how-it-works" class="demo">
         <div class="section-header">
@@ -134,111 +136,46 @@
         </div>
     </section>
 
-    <section id="pricing" class="pricing">
-        <div class="section-header">
-            <h2>Choose Your <span class="highlight">ChronoPulse</span></h2>
-            <p class="section-subtitle">Find the perfect model for your lifestyle</p>
-        </div>
-        <div class="pricing-cards">
-            <div class="card">
-                <div class="card-image">
-                    <img src="image2.png" alt="Standard Model">
-                </div>
-                <h3>Standard</h3>
-                <p class="price">$199</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Basic health tracking</li>
-                    <li><i class="fas fa-check"></i> 3-day battery life</li>
-                    <li><i class="fas fa-check"></i> 5ATM water resistance</li>
-                    <li><i class="fas fa-check"></i> Standard band</li>
-                </ul>
-                <button class="selectbtn btn-outline" id="btn1">Select</button>
-            </div>
-            <div class="card featured">
-                <div class="popular-badge">Most Popular</div>
-                <div class="card-image">
-                    <img src="image3.png" alt="Pro Model">
-                </div>
-                <h3>Pro</h3>
-                <p class="price">$299</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Advanced health tracking</li>
-                    <li><i class="fas fa-check"></i> 7-day battery life</li>
-                    <li><i class="fas fa-check"></i> 10ATM water resistance</li>
-                    <li><i class="fas fa-check"></i> Premium band</li>
-                    <li><i class="fas fa-check"></i> ECG functionality</li>
-                </ul>
-                <button class="selectbtn btn-primary">Select</button>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="image1.png" alt="Luxury Model">
-                </div>
-                <h3>Ultra</h3>
-                <p class="price">$499</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> All Pro features</li>
-                    <li><i class="fas fa-check"></i> Titanium case</li>
-                    <li><i class="fas fa-check"></i> Handcrafted band</li>
-                    <li><i class="fas fa-check"></i> Exclusive watch faces</li>
-                    <li><i class="fas fa-check"></i> Priority support</li>
-                </ul>
-                <button class="selectbtn btn-outline">Select</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="cta" class="cta">
-        <div class="cta-content">
-            <h2>Ready to Experience <span class="highlight2">ChronoPulse?</span></h2>
-            <p>Join thousands of satisfied customers and revolutionize your daily life.</p>
-            <form id="form" action="https://www.freecodecamp.com/email-submit">
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                    <button type="submit" id="submit" class="btn btn-primary">Pre-order Now</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <div class="footer-content" style="background-color: --dark-color;">
+    <footer>
+        <div class="footer-content">
             <div class="footer-logo">
-                <img src="logo-light.png" alt="ChronoPulse Logo" id="footer-img">
-                <span id="bottom-text">ChronoPulse</span>
+                <a href="index.htm">
+                    <img src="logo-light.png" alt="ChronoPulse Logo">
+                </a>
+                <span>ChronoPulse</span>
             </div>
             <div class="footer-links">
                 <div class="link-group">
                     <h4>Product</h4>
-                    <a href="#">Features</a>
-                    <a href="#">Pricing</a>
-                    <a href="#">FAQ</a>
+                    <a class="nav-link" href="index.htm#features">Features</a>
+                    <a class="nav-link" href="pricing.html">Pricing</a>
+                    <a class="nav-link" href="index.htm">FAQ</a>
                 </div>
                 <div class="link-group">
                     <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Careers</a>
+                    <a class="nav-link" href="index.htm">About Us</a>
+                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="#">Careers</a>
                 </div>
                 <div class="link-group">
                     <h4>Support</h4>
-                    <a href="#">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Privacy Policy</a>
+                    <a class="nav-link" href="#">Terms of Service</a>
                 </div>
                 <div class="link-group">
                     <h4>Connect</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i>
+                        <a  class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i>
                             <img src="./ico/youtube.png" width="20px" alt="">
                         </a>
-                        <a href="#"><i class="fab fa-twitter"></i>
+                        <a class="nav-link" href="https://x.com/" target="_blank"><i class="fab fa-x"></i>
                             <img src="./ico/facebook.png" width="20px" alt="">
                         </a>
-                        <a href="#"><i class="fab fa-instagram"></i>
+                        <a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i>
                             <img src="./ico/reddit.png" width="20px" alt="">
                         </a>
-                        <a href="#"><i class="fab fa-youtube"></i>
+                        <a class="nav-link" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i>
                             <img src="./ico/pinterest.png" width="20px" alt="">
                         </a>
                     </div>
