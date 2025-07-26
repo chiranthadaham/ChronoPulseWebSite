@@ -5,6 +5,7 @@ const footerLogo=document.getElementById('footer-img')
 const darkcard=document.getElementsByClassName('feature-card')
 const footer=document.getElementById('footer')
 const pricecards=document.getElementsByClassName('card')
+const orderform=document.getElementsByClassName('order-form')
 
 
 const enableDarkmode=()=>{
@@ -45,6 +46,7 @@ const disabledarkmode=()=>{
         for(let i=0;i<pricecards.length;i++){
             pricecards[i].style.backgroundColor='#ffffffff';
         }
+    
 }
 
 if(darkmode==="active")enableDarkmode()

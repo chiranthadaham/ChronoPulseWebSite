@@ -16,7 +16,7 @@
             --secondary-color: #ff5e00;
             --accent-color: #dc0505;
             --dark-color: #ffffff;
-            --light-color: #000000;
+            --light-color: #2d2d3a;
             --gray-color: #9c9c9c;
             --light-gray: #000000;
             --white: #000000;
@@ -497,6 +497,13 @@
             border-radius: 50px 50px 50px 50px;
             font-size: 1rem;
             outline: none;
+            box-shadow: #2d2d3a 1px 4px 10px -4px;
+            transition: 1s ease;
+        }
+        #email:hover, #fname:hover, #lname:hover, #number:hover, #address:hover {
+            box-shadow: var(--primary-color) 1px 4px 10px -4px;
+            font-size: 20px;
+
         }
         #join{
             flex: 1;
@@ -782,4 +789,9 @@
             border-radius: 25px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
+        }
+        #model-select-h4{
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--dark-color);
         }
