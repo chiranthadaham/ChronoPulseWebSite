@@ -126,6 +126,7 @@
 
         .nav-link:hover {
             color: var(--primary-color);
+            font-size: 110%;
         }
 
         .nav-link:after {
@@ -140,7 +141,7 @@
         }
 
         .nav-link:hover:after {
-            width: 100%;
+            width: 0%;
         }
 
         .cta-link {
@@ -463,10 +464,11 @@
         }
 
         .cta {
-            padding: 6rem 2rem;
+            padding: 9rem 2rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
             text-align: center;
+            
         }
 
         .cta h2 {
@@ -485,25 +487,44 @@
             display: flex;
             max-width: 600px;
             margin: 0 auto;
+            padding: 20px;
         }
 
-        #email {
+        #email,#fname,#lname, #number,#address {
             flex: 1;
             padding: 15px 20px;
             border: none;
-            border-radius: 50px 0 0 50px;
+            border-radius: 50px 50px 50px 50px;
             font-size: 1rem;
             outline: none;
         }
-
-        #submit {
-            border-radius: 0 50px 50px 0;
+        #join{
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px 0px 0px 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+        #join-btn{
+            border-radius: 0px 50px 50px 0px;
             padding: 15px 30px;
             border: none;
             background-color: var(--accent-color);
             color: var(--white);
             font-weight: 600;
             cursor: pointer;
+        }
+
+        #submit {
+            border-radius: 50px 50px 50px 50px;
+            padding: 15px 30px;
+            border: none;
+            background-color: var(--accent-color);
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 auto;
         }
 
         footer {
@@ -586,6 +607,7 @@
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
         }
+        
 
         /* Responsive Design */
         @media (max-width: 1024px) {
@@ -636,11 +658,11 @@
                 flex-direction: column;
             }
 
-            #email, #submit {
+            #email,#fname,#lname #number,#address, #submit {
                 border-radius: 50px;
             }
 
-            #email {
+            #email,#fname,#lname,#address #number {
                 margin-bottom: 1rem;
             }
 
@@ -728,4 +750,36 @@
         }
         #bottom-text{
             color: white;
+        }
+        #lname{
+            margin-left: 10px;
+        }
+        #watch-images {
+            margin: 0 auto; 
+            width: 80%; 
+
+        }
+        #watch-images tr td img{
+            height: 100px;
+            transition: 0.3s ease;
+            border-radius: 100%;
+            margin-left: 10px;
+        }
+        #watch-images tr td img:hover{
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .radio-model-select{
+            justify-content: center;
+        }
+        .order-form{
+            background-color: var(--light-color);
+            width: 70%;
+            margin: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
         }

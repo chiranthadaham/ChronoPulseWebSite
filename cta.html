@@ -10,15 +10,15 @@
         </button>
         <nav id="nav-bar">
             <div class="logo-container">
-                <a href="index.htm">
+                <a href="index.html">
                     <img src="logo.png" alt="ChronoPulse Logo" id="header-img" class="logo-pulse">
                 </a>
                 <span class="logo-text">ChronoPulse</span>
             </div>
             <ul class="nav-links">
-                <li><a class="nav-link"  href="index.htm">Home</a></li>
-                <li><a class="nav-link"  href="index.htm#features">Features</a></li>
-                <li><a class="nav-link" href="index.htm#how-it-works">Demo</a></li>
+                <li><a class="nav-link"  href="index.html">Home</a></li>
+                <li><a class="nav-link"  href="index.html#features">Features</a></li>
+                <li><a class="nav-link" href="index.html#how-it-works">Demo</a></li>
                 <li><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li><a class="nav-link cta-link" href="cta.html">Pre-order</a></li>
             </ul>
@@ -26,13 +26,43 @@
     </header>
 
 <section id="cta" class="cta">
-        <div class="cta-content">
-            <h2>Ready to Experience <span class="highlight2">ChronoPulse?</span></h2>
-            <p>Join thousands of satisfied customers and revolutionize your daily life.</p>
-            <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <div class="order-form">
+            <h2><span class="highlight2">Ready to Experience</span> <span class="highlight">ChronoPulse?</span></h2>
+            <p><span class="highlight2">Join thousands of satisfied customers and revolutionize your daily life.</span></p>
+            <form id="form" action="">
                 <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    <input type="text" id="fname" name="name" placeholder="Enter your first name" required><br>
+                    <input type="text" id="lname" name="name" placeholder="Enter your last name" required><br>
+                    
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required><br>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="number" name="number" placeholder="Enter your contact number" required><br>
+                </div>
+                <div class="form-group">
+                    <input type="address" id="address" name="address" placeholder="Enter your home address" required><br>
+                </div>
+                <h4>Select your model</h4>
+                <div class="form-group">
+                    
+                    <table id="watch-images">
+                        <tr>
+                            <td><img src="image2.png" alt="" class="purchase-model" id="Standard"></td>
+                            <td><img src="image3.png" alt="" class="purchase-model" id="Pro"></td>
+                            <td><img src="image1.png" alt="" class="purchase-model" id="Ultra"></td>
+                        </tr>
+                        <tr>
+                            <td class="radio-model-select"><center><input type="radio" id="select-standard" name="model"  required></center></td>
+                            <td class="radio-model-select"><center><input type="radio" id="select-pro" name="model" required></center></td>
+                            <td class="radio-model-select"><center><input type="radio" id="select-Ultra" name="model" required></center></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group">
                     <button type="submit" id="submit" class="btn btn-primary">Pre-order Now</button>
+                    
                 </div>
             </form>
         </div>
@@ -40,7 +70,7 @@
 <footer>
         <div class="footer-content">
             <div class="footer-logo">
-               <a href="index.htm">
+               <a href="index.html">
                     <img src="logo-light.png" alt="ChronoPulse Logo">
                 </a>
                 <span>ChronoPulse</span>
@@ -48,13 +78,13 @@
             <div class="footer-links">
                 <div class="link-group">
                     <h4>Product</h4>
-                    <a class="nav-link" href="index.htm#features">Features</a>
+                    <a class="nav-link" href="index.html#features">Features</a>
                     <a class="nav-link" href="pricing.html">Pricing</a>
-                    <a class="nav-link" href="index.htm">FAQ</a>
+                    <a class="nav-link" href="index.html">FAQ</a>
                 </div>
                 <div class="link-group">
                     <h4>Company</h4>
-                    <a class="nav-link" href="index.htm">About Us</a>
+                    <a class="nav-link" href="index.html">About Us</a>
                     <a class="nav-link" href="#">Blog</a>
                     <a class="nav-link" href="#">Careers</a>
                 </div>
@@ -77,7 +107,7 @@
                             <img src="./ico/reddit.png" width="20px" alt="">
                         </a>
                         <a class="nav-link" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i>
-                            <img src="./ico/pinterest.png" width="20px" alt="">
+                            <img src="./ico/whatsapp.png" width="20px" alt="">
                         </a>
                     </div>
                 </div>
