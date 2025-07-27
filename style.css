@@ -63,7 +63,7 @@
         body {
             line-height: 1.6;
             color: var(--dark-color);
-            background-color: var(--light-color);
+            background-color: var(--light-gray);
         }
 
         /* Header and navigation styles remain the same */
@@ -122,11 +122,19 @@
             font-weight: 500;
             transition: var(--transition);
             position: relative;
+            background-color: transparent;
         }
 
         .nav-link:hover {
             color: var(--primary-color);
-            font-size: 110%;
+            text-shadow: #2d2d3a 0px 0px 50px;
+            font-size: 101%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            font-weight: 600;
+            padding: 10px;
+            backdrop-filter: 100px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .nav-link:after {
@@ -736,6 +744,13 @@
             text-decoration: none;
             padding-left: 20px;
             padding-right: 20px;
+            transition: 0.3s ease;
+        }
+        .btn-primary:hover{
+            background-color: var(--accent-color);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
         }
         .btn-secondary{
             background-color: white;
@@ -745,6 +760,13 @@
             text-decoration: none;
             padding-left: 20px;
             padding-right: 20px;
+            transition: 0.3s ease;
+        }
+        .btn-secondary:hover{
+            background-color: white;
+            color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
         }
         #btn1{
             transform: translateY(40px);
