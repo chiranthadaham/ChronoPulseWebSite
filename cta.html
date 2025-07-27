@@ -47,7 +47,7 @@
                 <h4 id="model-select-h4">Select your model</h4>
                 <div class="form-group">
                     
-                    <table id="watch-images">
+                    <!--<table id="watch-images">
                         <tr>
                             <td><img src="image2.png" alt="" class="purchase-model" id="Standard"></td>
                             <td><img src="image3.png" alt="" class="purchase-model" id="Pro"></td>
@@ -58,7 +58,13 @@
                             <td class="radio-model-select"><center><input type="radio" id="select-pro" name="model" required></center></td>
                             <td class="radio-model-select"><center><input type="radio" id="select-Ultra" name="model" required></center></td>
                         </tr>
-                    </table>
+                    </table>-->
+                    <input type="radio" id="select-standard" name="model" value="Standard" required>
+                    <label class="watch-label" id="watch-label-1" for="select-standard"><img src="image2.png" alt=""></label>
+                    <input type="radio" id="select-pro" name="model" value="Pro" required>
+                    <label class="watch-label" id="watch-label-2" for="select-pro"><img src="image3.png" alt=""></label>
+                    <input type="radio" id="select-ultra" name="model" value="Ultra" required>
+                    <label class="watch-label" id="watch-label-3" for="select-ultra"><img src="image1.png" alt=""></label>
                 </div>
                 <div class="form-group">
                     <button type="submit" id="submit" class="btn btn-primary">Pre-order Now</button>
